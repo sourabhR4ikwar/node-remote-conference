@@ -44,7 +44,7 @@ const Register = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     console.log(form);
-    fetch("http://localhost:3001/api/v1/register", {
+    fetch("/api/v1/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
