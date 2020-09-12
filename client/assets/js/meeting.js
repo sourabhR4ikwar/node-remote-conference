@@ -1,6 +1,6 @@
 
 // console.log('hello');
-const socket = io('/');
+const socket = io("/");
 const myVideo = document.createElement('video');
 const videoGrid = document.getElementById('video-grid');
 const username = localStorage.getItem('displayName');
@@ -9,9 +9,9 @@ let myVideoStream = null;
 // let peers = [];
 
 var peer = new Peer(undefined, {
-    path: '/peerjs',
+    // path: '/peerjs',
     host: '/',
-    port: PORT
+    port: '3001'
 });
 
 navigator.mediaDevices.getUserMedia({
