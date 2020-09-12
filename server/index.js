@@ -46,9 +46,13 @@ module.exports = () => {
             console.log("user-joined", RoomId, userId);
             socket.join(RoomId);
             socket.to(RoomId).broadcast.emit("user-connected", userId);
+            socket.on("disconnect", () => {
+              socket.to(RoomId).broadcast.emit("user-disconnected", userId);
+            });
             socket.on("message", (message, user) => {
               io.to(RoomId).emit("createMessage", message, user);
             });
+          
           });
         });
     }

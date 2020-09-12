@@ -6,7 +6,7 @@ const videoGrid = document.getElementById('video-grid');
 const username = localStorage.getItem('displayName');
 myVideo.muted = true;
 let myVideoStream = null;
-// let peers = [];
+const peers = {};
 
 var peer = new Peer(undefined, {
     path: '/peerjs',
@@ -33,6 +33,11 @@ navigator.mediaDevices.getUserMedia({
         console.log('user-connected 1');
         connectToNewUser(userId, stream);
     });
+});
+
+socket.on("user-disconnected", (userId) => {
+    console.log("User Disconnected");
+    if(peers[userId]) peers[userId].close();
 })
 
 
@@ -53,7 +58,7 @@ const connectToNewUser = (userId, stream) => {
         video.remove()
     })
 
-    // peers[userId] = call
+    peers[userId] = call;
 };
 
 const addVideoStream = (video, stream) => {
