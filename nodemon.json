@@ -1,6 +1,6 @@
 {
     "env":{
-        "NODE_ENV": "production",
+        "NODE_ENV": "local",
         "PORT":4456,
         "MONGO_URI":"mongodb+srv://sourabh_raikwar:persia@cluster0-2o0ig.mongodb.net/remote-conference?retryWrites=true&w=majority",
         "SECRET":"supersecret"

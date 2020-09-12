@@ -9,7 +9,7 @@ let myVideoStream = null;
 // let peers = [];
 
 var peer = new Peer(undefined, {
-    // path: '/peerjs',
+    path: '/peerjs',
     host: '/',
     port: '3001'
 });
@@ -23,25 +23,30 @@ navigator.mediaDevices.getUserMedia({
     peer.on('call', call => {
         call.answer(stream);
         const video = document.createElement('video');
+        console.log('call 2');
         call.on('stream', userVideoStream => {
             addVideoStream(video, userVideoStream);
+            console.log('stream 2');
         });
     });
     socket.on("user-connected", (userId) => {
+        console.log('user-connected 1');
         connectToNewUser(userId, stream);
     });
 })
 
 
 peer.on('open', id => {
+    console.log('open');
     socket.emit("join-room", RoomId, id);
 });
 
 const connectToNewUser = (userId, stream) => {
   const call = peer.call(userId, stream);
+  console.log("call 1");
   const video = document.createElement('video');
   call.on('stream', userVideoStream => {
-      console.log('called');
+      console.log('stream 1');
       addVideoStream(video, userVideoStream);
   });
     call.on('close', () => {
@@ -52,7 +57,7 @@ const connectToNewUser = (userId, stream) => {
 };
 
 const addVideoStream = (video, stream) => {
-    console.log('entering add video stream');
+    console.log('addVideoStream');
   video.srcObject = stream;
   video.addEventListener("loadedmetadata", () => {
     video.play();
