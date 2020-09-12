@@ -75,7 +75,7 @@ const JoinConference = (props) => {
       }
       else {
         localStorage.setItem('displayName', form.displayName);
-        window.open(`conferences/${form.conferenceId}`, "_self");
+        window.open(`/conferences/${form.conferenceId}`, "_self");
       }
       
     }
