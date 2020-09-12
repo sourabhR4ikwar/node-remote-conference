@@ -14,8 +14,7 @@ module.exports = () => {
     const io = require("socket.io")(server);
     const { ExpressPeerServer } = require("peer");
     const peerServer = ExpressPeerServer(server, {
-      debug: true,
-      path: '/'
+      debug: true
     });
     let create, start;
     create = (config, db) => {

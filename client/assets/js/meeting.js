@@ -10,8 +10,8 @@ let myVideoStream = null;
 
 var peer = new Peer(undefined, {
     path: '/peerjs',
-    host: '/',
-    port: '3001'
+    host: location.hostname,
+	port: location.port || (location.protocol === 'https:' ? 443 : 80)
 });
 
 navigator.mediaDevices.getUserMedia({
