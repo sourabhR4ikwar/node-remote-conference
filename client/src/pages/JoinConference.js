@@ -68,7 +68,7 @@ const JoinConference = (props) => {
                 displayName: "",
               });
               localStorage.setItem("displayName", form.displayName);
-              window.open(`conferences/${form.conferenceId}`, "_self");
+              window.open(`/conferences/${form.conferenceId}`, "_self");
             }
           })
           .catch((err) => setMessage("Internal Server Error!." + err));

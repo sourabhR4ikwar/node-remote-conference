@@ -55,7 +55,7 @@ const connectToNewUser = (userId, stream) => {
       addVideoStream(video, userVideoStream);
   });
     call.on('close', () => {
-        video.remove()
+        video.remove();
     })
 
     peers[userId] = call;
