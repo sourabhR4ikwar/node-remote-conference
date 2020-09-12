@@ -11,7 +11,7 @@ let myVideoStream = null;
 var peer = new Peer(undefined, {
     path: '/peerjs',
     host: '/',
-    port: process.env.PORT
+    port: PORT
 });
 
 navigator.mediaDevices.getUserMedia({
