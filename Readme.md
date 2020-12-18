@@ -12,8 +12,8 @@ To learn the concept of Web Real time communication (WebRTC) while building a co
 
 ## Screenshots
 
-![Homepage](/Screenshots/Homepage.jpg)
-![Join Page](/Screenshots/join_conference.jpg)
+![Homepage](/Screenshots/Homepage.JPG)
+![Join Page](/Screenshots/join_conference.JPG)
 <!-- ![Main Conference](/Screenshots/main_video_conference.jpg) -->
 
 ## Tech/framework used
